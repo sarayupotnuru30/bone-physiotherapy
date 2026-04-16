@@ -18,13 +18,12 @@ export default function TestimonialCarousel() {
   const timerRef = useRef<ReturnType<typeof setInterval>>();
 
   const resetTimer = () => {
-    if (timer) clearInterval(timer);
     clearInterval(timerRef.current);
     timerRef.current = setInterval(() => setCurrent((p) => (p + 1) % testimonials.length), 4000);
   };
 
   useEffect(() => {
-    resetTimer(undefined);
+    resetTimer();
     return () => clearInterval(timerRef.current);
   }, []);
 
