@@ -15,7 +15,7 @@ const testimonials = [
 
 export default function TestimonialCarousel() {
   const [current, setCurrent] = useState(0);
-  const timerRef = useRef<ReturnType<typeof setInterval>>();
+  const timerRef = useRef<ReturnType<typeof setInterval>>(undefined);
 
   const resetTimer = () => {
     clearInterval(timerRef.current);
