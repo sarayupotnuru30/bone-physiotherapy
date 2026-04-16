@@ -1,11 +1,12 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion } from "framer-motion";
-import { Shield, Heart, Zap, Users, Star, ChevronRight } from "lucide-react";
+import { Shield, Heart, Zap, Users, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import SectionHeading from "@/components/SectionHeading";
 import DoctorCard from "@/components/DoctorCard";
 import ServiceCard from "@/components/ServiceCard";
-import heroImg from "@/assets/hero-physio.jpg";
+import TestimonialCarousel from "@/components/TestimonialCarousel";
+import heroImg from "@/assets/hero-physio-new.jpg";
 import orthoImg from "@/assets/ortho-care.jpg";
 import neuroImg from "@/assets/neuro-rehab.jpg";
 import sportsImg from "@/assets/sports-rehab.jpg";
@@ -31,12 +32,6 @@ const whyUs = [
   { icon: Users, title: "Patient-first Approach", desc: "Your comfort and recovery are our top priority" },
 ];
 
-const testimonials = [
-  { name: "Rajesh K.", text: "After my knee surgery, the rehab here was exceptional. I'm walking pain-free now!", rating: 5 },
-  { name: "Priya S.", text: "The best physiotherapy clinic in Secunderabad. Dr. Chaitanya is incredibly skilled.", rating: 5 },
-  { name: "Anand M.", text: "My chronic back pain is finally manageable. The personalized treatment made all the difference.", rating: 5 },
-];
-
 function HomePage() {
   return (
     <>
@@ -44,7 +39,7 @@ function HomePage() {
       <section className="relative min-h-screen flex items-center overflow-hidden">
         <div className="absolute inset-0">
           <img src={heroImg} alt="Physiotherapy consultation" className="w-full h-full object-cover" width={1920} height={1080} />
-          <div className="absolute inset-0 bg-gradient-to-r from-foreground/80 via-foreground/60 to-foreground/20" />
+          <div className="absolute inset-0 bg-gradient-to-r from-foreground/85 via-foreground/65 to-foreground/10" />
         </div>
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-32">
           <motion.div
@@ -53,9 +48,14 @@ function HomePage() {
             transition={{ duration: 0.8 }}
             className="max-w-2xl"
           >
-            <span className="inline-block mb-4 px-4 py-1.5 rounded-full bg-primary/20 text-primary-foreground text-sm font-medium backdrop-blur-sm">
+            <motion.span
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="inline-block mb-4 px-5 py-2 rounded-full bg-primary/20 text-primary-foreground text-sm font-medium backdrop-blur-sm border border-primary-foreground/10"
+            >
               Expert Physiotherapy & Orthopaedic Care
-            </span>
+            </motion.span>
             <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-background leading-tight">
               Restore Movement.{" "}
               <span className="text-primary">Relieve Pain.</span>{" "}
@@ -79,7 +79,7 @@ function HomePage() {
       </section>
 
       {/* Doctor */}
-      <section className="py-20 bg-surface">
+      <section className="py-24 bg-surface">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeading badge="Meet Our Expert" title="Your Health, Our Priority" />
           <DoctorCard />
@@ -87,7 +87,7 @@ function HomePage() {
       </section>
 
       {/* Services */}
-      <section className="py-20">
+      <section className="py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeading
             badge="Our Services"
@@ -110,7 +110,7 @@ function HomePage() {
       </section>
 
       {/* Why Choose Us */}
-      <section className="py-20 bg-medical-light">
+      <section className="py-24 bg-medical-light">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeading badge="Why Choose Us" title="Trusted by Hundreds of Patients" />
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -121,13 +121,13 @@ function HomePage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="bg-card rounded-2xl p-6 shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1 text-center"
+                className="bg-card rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 text-center border border-border"
               >
-                <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-xl bg-medical-light">
-                  <item.icon className="h-7 w-7 text-primary" />
+                <div className="mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-2xl bg-primary/10">
+                  <item.icon className="h-8 w-8 text-primary" />
                 </div>
-                <h3 className="font-heading font-bold text-foreground">{item.title}</h3>
-                <p className="mt-2 text-sm text-muted-foreground">{item.desc}</p>
+                <h3 className="font-heading font-bold text-foreground text-lg">{item.title}</h3>
+                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -135,45 +135,30 @@ function HomePage() {
       </section>
 
       {/* Testimonials */}
-      <section className="py-20">
+      <section className="py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <SectionHeading badge="Testimonials" title="What Our Patients Say" />
-          <div className="grid md:grid-cols-3 gap-6">
-            {testimonials.map((t, i) => (
-              <motion.div
-                key={t.name}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="bg-card rounded-2xl p-6 shadow-md border border-border"
-              >
-                <div className="flex gap-1 mb-3">
-                  {Array.from({ length: t.rating }).map((_, j) => (
-                    <Star key={j} className="h-4 w-4 fill-primary text-primary" />
-                  ))}
-                </div>
-                <p className="text-muted-foreground leading-relaxed italic">"{t.text}"</p>
-                <p className="mt-4 font-heading font-bold text-foreground text-sm">{t.name}</p>
-              </motion.div>
-            ))}
-          </div>
+          <SectionHeading badge="Testimonials" title="What Our Patients Say" description="Real stories from patients who trusted us with their recovery." />
+          <TestimonialCarousel />
         </div>
       </section>
 
       {/* CTA Banner */}
-      <section className="py-20 bg-primary">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
+      <section className="py-24 bg-gradient-to-br from-primary to-medical-dark relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-background blur-3xl" />
+          <div className="absolute bottom-0 left-0 w-72 h-72 rounded-full bg-background blur-3xl" />
+        </div>
+        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="font-heading text-3xl md:text-4xl font-bold text-primary-foreground">
+            <h2 className="font-heading text-3xl md:text-5xl font-bold text-primary-foreground">
               Ready to Start Your Recovery Journey?
             </h2>
-            <p className="mt-4 text-primary-foreground/80 max-w-xl mx-auto">
+            <p className="mt-4 text-primary-foreground/80 max-w-xl mx-auto text-lg">
               Book an appointment today and take the first step toward a pain-free life.
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-4">
