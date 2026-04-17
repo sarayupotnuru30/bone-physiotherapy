@@ -1,4 +1,4 @@
-import { Link, useLocation } from "@tanstack/react-router";
+import { Link, useLocation, NavLink } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { Menu, X, Phone } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -48,16 +48,18 @@ export default function Navbar() {
 
           <div className="hidden md:flex items-center gap-1">
             {navLinks.map((link) => (
-              <Link
+              <NavLink
                 key={link.to}
                 to={link.to}
-                activeOptions={{ exact: link.to === "/" }}
-                activeProps={{ className: "text-primary bg-accent" }}
-                inactiveProps={{ className: "text-foreground/70 hover:text-primary hover:bg-accent/50" }}
-                className="px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200"
+                end={link.to === "/"}
+                className={({ isActive }) =>
+                  `px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
+                    isActive ? "text-primary bg-accent" : "text-foreground/70 hover:text-primary hover:bg-accent/50"
+                  }`
+                }
               >
                 {link.label}
-              </Link>
+              </NavLink>
             ))}
             <a
               href="tel:9390370782"
@@ -88,16 +90,18 @@ export default function Navbar() {
           >
             <div className="px-4 py-4 space-y-1">
               {navLinks.map((link) => (
-                <Link
+                <NavLink
                   key={link.to}
                   to={link.to}
-                  activeOptions={{ exact: link.to === "/" }}
-                  activeProps={{ className: "text-primary bg-accent" }}
-                  inactiveProps={{ className: "text-foreground/70" }}
-                  className="block px-4 py-3 rounded-lg text-base font-medium transition-colors"
+                  end={link.to === "/"}
+                  className={({ isActive }) =>
+                    `block px-4 py-3 rounded-lg text-base font-medium transition-colors ${
+                      isActive ? "text-primary bg-accent" : "text-foreground/70"
+                    }`
+                  }
                 >
                   {link.label}
-                </Link>
+                </NavLink>
               ))}
               <a
                 href="tel:9390370782"
