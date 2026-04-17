@@ -31,7 +31,7 @@ export default function DoctorCard() {
           </h3>
           <p className="text-primary font-semibold mt-2 text-lg">Consultant Orthopaedic Surgeon</p>
           <p className="text-sm text-muted-foreground mt-1">
-            Bone Orthopaedic Clinic, in association with Oxycare Hospitals (ECIL | Begumpet | Gajwel)
+            Bone Orthopaedic Clinic, in association with Oxycare Hospitals (ECIL | Safilguda)
           </p>
           <div className="mt-5 space-y-3 text-muted-foreground leading-relaxed text-[15px]">
             <p>

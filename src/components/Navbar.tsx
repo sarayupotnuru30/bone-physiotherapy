@@ -1,3 +1,261 @@
+// import { Link, useLocation, NavLink } from "react-router-dom";
+// import { useState, useEffect } from "react";
+// import { Menu, X, Phone } from "lucide-react";
+// import { motion, AnimatePresence } from "framer-motion";
+// import logo from "@/assets/logo2.png";
+
+// const navLinks = [
+//   { to: "/", label: "Home" },
+//   { to: "/about", label: "About" },
+//   { to: "/services", label: "Services" },
+//   { to: "/contact", label: "Contact" },
+// ] as const;
+
+// export default function Navbar() {
+//   const [scrolled, setScrolled] = useState(false);
+//   const [mobileOpen, setMobileOpen] = useState(false);
+//   const location = useLocation();
+
+//   useEffect(() => {
+//     const onScroll = () => setScrolled(window.scrollY > 20);
+//     window.addEventListener("scroll", onScroll, { passive: true });
+//     return () => window.removeEventListener("scroll", onScroll);
+//   }, []);
+
+//   useEffect(() => {
+//     setMobileOpen(false);
+//   }, [location.pathname]);
+
+//   return (
+//     <nav
+//       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+//         scrolled
+//           ? "bg-card/95 backdrop-blur-md shadow-lg border-b border-border"
+//           : "bg-transparent"
+//       }`}
+//     >
+//       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+//         <div className="flex h-20 items-center justify-between">
+//           <Link to="/" className="flex items-center gap-3">
+//             <img src={logo} alt="Bone Physiotherapy Clinic" className="h-14 w-auto rounded-lg" />
+//             <div className="hidden sm:block">
+//               <span className="font-heading text-lg font-bold text-foreground leading-tight block">
+//                 Bone Physiotherapy
+//               </span>
+//               <span className="text-xs text-muted-foreground">Recover, Rebuild, Return Stronger</span>
+//             </div>
+//           </Link>
+
+//           <div className="hidden md:flex items-center gap-1">
+//             {navLinks.map((link) => (
+//               <NavLink
+//                 key={link.to}
+//                 to={link.to}
+//                 end={link.to === "/"}
+//                 className={({ isActive }) =>
+//                   `px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
+//                     isActive ? "text-primary bg-accent" : "text-foreground/70 hover:text-primary hover:bg-accent/50"
+//                   }`
+//                 }
+//               >
+//                 {link.label}
+//               </NavLink>
+//             ))}
+//             <a
+//               href="tel:9390370782"
+//               className="ml-3 inline-flex items-center gap-2 rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300"
+//             >
+//               <Phone className="h-4 w-4" />
+//               Call Now
+//             </a>
+//           </div>
+
+//           <button
+//             onClick={() => setMobileOpen(!mobileOpen)}
+//             className="md:hidden p-2 rounded-lg hover:bg-accent transition-colors"
+//             aria-label="Toggle menu"
+//           >
+//             {mobileOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+//           </button>
+//         </div>
+//       </div>
+
+//       <AnimatePresence>
+//         {mobileOpen && (
+//           <motion.div
+//             initial={{ opacity: 0, height: 0 }}
+//             animate={{ opacity: 1, height: "auto" }}
+//             exit={{ opacity: 0, height: 0 }}
+//             className="md:hidden bg-card/95 backdrop-blur-md border-b border-border overflow-hidden"
+//           >
+//             <div className="px-4 py-4 space-y-1">
+//               {navLinks.map((link) => (
+//                 <NavLink
+//                   key={link.to}
+//                   to={link.to}
+//                   end={link.to === "/"}
+//                   className={({ isActive }) =>
+//                     `block px-4 py-3 rounded-lg text-base font-medium transition-colors ${
+//                       isActive ? "text-primary bg-accent" : "text-foreground/70"
+//                     }`
+//                   }
+//                 >
+//                   {link.label}
+//                 </NavLink>
+//               ))}
+//               <a
+//                 href="tel:9390370782"
+//                 className="flex items-center gap-2 px-4 py-3 rounded-lg bg-primary text-primary-foreground font-semibold mt-2"
+//               >
+//                 <Phone className="h-4 w-4" />
+//                 Call Now
+//               </a>
+//             </div>
+//           </motion.div>
+//         )}
+//       </AnimatePresence>
+//     </nav>
+//   );
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// import { Link, useLocation, NavLink } from "react-router-dom";
+// import { useState, useEffect } from "react";
+// import { Menu, X, Phone } from "lucide-react";
+// import { motion, AnimatePresence } from "framer-motion";
+// import logo from "@/assets/logo2.png";
+
+// const navLinks = [
+//   { to: "/", label: "Home" },
+//   { to: "/about", label: "About" },
+//   { to: "/services", label: "Services" },
+//   { to: "/contact", label: "Contact" },
+// ] as const;
+
+// export default function Navbar() {
+//   const [scrolled, setScrolled] = useState(false);
+//   const [mobileOpen, setMobileOpen] = useState(false);
+//   const location = useLocation();
+
+//   useEffect(() => {
+//     const onScroll = () => setScrolled(window.scrollY > 20);
+//     window.addEventListener("scroll", onScroll, { passive: true });
+//     return () => window.removeEventListener("scroll", onScroll);
+//   }, []);
+
+//   useEffect(() => {
+//     setMobileOpen(false);
+//   }, [location.pathname]);
+
+//   return (
+//     <nav
+//       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+//         scrolled
+//           ? "bg-card/95 backdrop-blur-md shadow-lg border-b border-border"
+//           : "bg-transparent"
+//       }`}
+//     >
+//       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+//         <div className="flex h-20 items-center justify-between">
+//           {/* Brand Section - Logo Only */}
+//           <Link to="/" className="flex items-center">
+//             <img src={logo} alt="Logo" className="h-14 w-auto rounded-lg" />
+//           </Link>
+
+//           {/* Desktop Navigation */}
+//           <div className="hidden md:flex items-center gap-1">
+//             {navLinks.map((link) => (
+//               <NavLink
+//                 key={link.to}
+//                 to={link.to}
+//                 end={link.to === "/"}
+//                 className={({ isActive }) =>
+//                   `px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
+//                     isActive ? "text-primary bg-accent" : "text-foreground/70 hover:text-primary hover:bg-accent/50"
+//                   }`
+//                 }
+//               >
+//                 {link.label}
+//               </NavLink>
+//             ))}
+//             <a
+//               href="tel:9390370782"
+//               className="ml-3 inline-flex items-center gap-2 rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300"
+//             >
+//               <Phone className="h-4 w-4" />
+//               Call Now
+//             </a>
+//           </div>
+
+//           {/* Mobile Menu Toggle */}
+//           <button
+//             onClick={() => setMobileOpen(!mobileOpen)}
+//             className="md:hidden p-2 rounded-lg hover:bg-accent transition-colors"
+//             aria-label="Toggle menu"
+//           >
+//             {mobileOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+//           </button>
+//         </div>
+//       </div>
+
+//       {/* Mobile Navigation */}
+//       <AnimatePresence>
+//         {mobileOpen && (
+//           <motion.div
+//             initial={{ opacity: 0, height: 0 }}
+//             animate={{ opacity: 1, height: "auto" }}
+//             exit={{ opacity: 0, height: 0 }}
+//             className="md:hidden bg-card/95 backdrop-blur-md border-b border-border overflow-hidden"
+//           >
+//             <div className="px-4 py-4 space-y-1">
+//               {navLinks.map((link) => (
+//                 <NavLink
+//                   key={link.to}
+//                   to={link.to}
+//                   end={link.to === "/"}
+//                   className={({ isActive }) =>
+//                     `block px-4 py-3 rounded-lg text-base font-medium transition-colors ${
+//                       isActive ? "text-primary bg-accent" : "text-foreground/70"
+//                     }`
+//                   }
+//                 >
+//                   {link.label}
+//                 </NavLink>
+//               ))}
+//               <a
+//                 href="tel:9390370782"
+//                 className="flex items-center gap-2 px-4 py-3 rounded-lg bg-primary text-primary-foreground font-semibold mt-2"
+//               >
+//                 <Phone className="h-4 w-4" />
+//                 Call Now
+//               </a>
+//             </div>
+//           </motion.div>
+//         )}
+//       </AnimatePresence>
+//     </nav>
+//   );
+// }
+
+
+
+
+
+
+
+
 import { Link, useLocation, NavLink } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { Menu, X, Phone } from "lucide-react";
@@ -35,17 +293,19 @@ export default function Navbar() {
       }`}
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex h-20 items-center justify-between">
-          <Link to="/" className="flex items-center gap-3">
-            <img src={logo} alt="Bone Physiotherapy Clinic" className="h-14 w-auto rounded-lg" />
-            <div className="hidden sm:block">
-              <span className="font-heading text-lg font-bold text-foreground leading-tight block">
-                Bone Physiotherapy
-              </span>
-              <span className="text-xs text-muted-foreground">Recover, Rebuild, Return Stronger</span>
-            </div>
+        {/* Increased height from h-20 to h-24 to accommodate larger logo */}
+        <div className="flex h-24 items-center justify-between">
+          
+          {/* Brand Section - Increased Logo Size from h-14 to h-20 */}
+          <Link to="/" className="flex items-center">
+            <img 
+              src={logo} 
+              alt="Logo" 
+              className="h-20 w-auto rounded-lg transition-transform hover:scale-105 duration-300" 
+            />
           </Link>
 
+          {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-1">
             {navLinks.map((link) => (
               <NavLink
@@ -70,6 +330,7 @@ export default function Navbar() {
             </a>
           </div>
 
+          {/* Mobile Menu Toggle */}
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
             className="md:hidden p-2 rounded-lg hover:bg-accent transition-colors"
@@ -80,6 +341,7 @@ export default function Navbar() {
         </div>
       </div>
 
+      {/* Mobile Navigation */}
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
