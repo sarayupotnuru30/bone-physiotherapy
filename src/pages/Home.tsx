@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Shield, Heart, Zap, Users, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -11,10 +11,6 @@ import orthoImg from "@/assets/ortho-care.jpg";
 import neuroImg from "@/assets/neuro-rehab.jpg";
 import sportsImg from "@/assets/sports-rehab.jpg";
 import elderlyImg from "@/assets/elderly-care.jpg";
-
-export const Route = createFileRoute("/")({
-  component: HomePage,
-});
 
 const WHATSAPP_URL = "https://wa.me/919390370782?text=Hi%2C%20I%20want%20to%20book%20an%20appointment.";
 
@@ -32,7 +28,7 @@ const whyUs = [
   { icon: Users, title: "Patient-first Approach", desc: "Your comfort and recovery are our top priority" },
 ];
 
-function HomePage() {
+export default function HomePage() {
   return (
     <>
       {/* Hero */}

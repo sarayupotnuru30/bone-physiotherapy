@@ -1,20 +1,7 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-
-export const Route = createFileRoute("/contact")({
-  head: () => ({
-    meta: [
-      { title: "Contact – Bone Physiotherapy Clinic" },
-      { name: "description", content: "Book an appointment at Bone Physiotherapy Clinic, Safilguda, Secunderabad. Call 9390370782." },
-      { property: "og:title", content: "Contact Bone Physiotherapy Clinic" },
-      { property: "og:description", content: "Book your physiotherapy appointment today." },
-    ],
-  }),
-  component: ContactPage,
-});
 
 const serviceOptions = [
   "Orthopaedic Care",
@@ -37,7 +24,7 @@ const contactBlocks = [
   { icon: Clock, label: "Working Hours", value: "Mon – Sat: 9:30 AM – 8:30 PM", color: "bg-secondary text-secondary-foreground" },
 ];
 
-function ContactPage() {
+export default function ContactPage() {
   const [form, setForm] = useState({ name: "", phone: "", age: "", service: "", message: "" });
 
   const handleSubmit = (e: React.FormEvent) => {

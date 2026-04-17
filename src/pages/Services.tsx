@@ -1,4 +1,3 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import SectionHeading from "@/components/SectionHeading";
 import ServiceCard from "@/components/ServiceCard";
@@ -7,18 +6,6 @@ import neuroImg from "@/assets/neuro-rehab.jpg";
 import sportsImg from "@/assets/sports-rehab.jpg";
 import elderlyImg from "@/assets/elderly-care.jpg";
 import heroImg from "@/assets/hero-physio.jpg";
-
-export const Route = createFileRoute("/services")({
-  head: () => ({
-    meta: [
-      { title: "Services – Bone Physiotherapy Clinic" },
-      { name: "description", content: "Explore our physiotherapy services: orthopedic care, neuro rehab, sports rehabilitation & elderly wellness." },
-      { property: "og:title", content: "Our Services – Bone Physiotherapy Clinic" },
-      { property: "og:description", content: "Comprehensive physiotherapy & rehabilitation services." },
-    ],
-  }),
-  component: ServicesPage,
-});
 
 const categories = [
   {
@@ -59,7 +46,7 @@ const categories = [
   },
 ];
 
-function ServicesPage() {
+export default function ServicesPage() {
   return (
     <div className="pt-20">
       {/* Hero */}

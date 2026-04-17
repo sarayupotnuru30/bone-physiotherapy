@@ -1,4 +1,3 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { CheckCircle2, Award, Clock, Users } from "lucide-react";
 import SectionHeading from "@/components/SectionHeading";
@@ -6,18 +5,6 @@ import DoctorCard from "@/components/DoctorCard";
 import TestimonialCarousel from "@/components/TestimonialCarousel";
 import missionImg from "@/assets/about-mission.jpg";
 import teamImg from "@/assets/about-team.jpg";
-
-export const Route = createFileRoute("/about")({
-  head: () => ({
-    meta: [
-      { title: "About – Bone Physiotherapy Clinic" },
-      { name: "description", content: "Learn about Bone Physiotherapy Clinic – expert physiotherapy & orthopedic care in Secunderabad." },
-      { property: "og:title", content: "About Bone Physiotherapy Clinic" },
-      { property: "og:description", content: "Expert physiotherapy & orthopedic care in Secunderabad." },
-    ],
-  }),
-  component: AboutPage,
-});
 
 const specialties = [
   "Orthopedic Physiotherapy",
@@ -35,7 +22,7 @@ const stats = [
   { icon: Clock, value: "98%", label: "Recovery Rate" },
 ];
 
-function AboutPage() {
+export default function AboutPage() {
   return (
     <div className="pt-20">
       {/* Hero */}
