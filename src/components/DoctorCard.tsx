@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import doctorImg from "@/assets/doctor-premium.png";
+import doctorImg from "@/assets/doctor.png";
 
 const tags = ["Knee Replacement", "Hip Replacement", "Arthroscopy Surgery", "Sports Injury", "Joint Care"];
 

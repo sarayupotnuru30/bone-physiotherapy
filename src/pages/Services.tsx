@@ -6,6 +6,21 @@ import neuroImg from "@/assets/neuro-rehab.jpg";
 import sportsImg from "@/assets/sports-rehab.jpg";
 import elderlyImg from "@/assets/elderly-care.jpg";
 import heroImg from "@/assets/hero-physio.jpg";
+import strockrecovery from "@/assets/stroke-recovery.jpg";
+import spinalcord from "@/assets/spinal-cord.jpg";
+import balence from "@/assets/balence.webp";
+import postsurgery from "@/assets/post-surgery.jpg";
+import ligament from "@/assets/ligament.webp";
+import muscletears from "@/assets/muscle-tears.webp";
+import jointinjuries from "@/assets/joint-injuries.jpg";
+import performance from "@/assets/performance.jpg";
+import arthiritis from "@/assets/arthritis.jpg";
+import mobility from "@/assets/mobility.webp";
+import balencetraining from "@/assets/balence-training.jpg";
+import chronicpain from "@/assets/chronic-pain.jpg";
+
+
+
 
 const categories = [
   {
@@ -20,28 +35,28 @@ const categories = [
   {
     title: "Neurological Rehabilitation",
     services: [
-      { image: neuroImg, title: "Stroke Recovery", description: "Comprehensive rehabilitation programs to regain function after stroke." },
-      { image: heroImg, title: "Spinal Cord Injuries", description: "Specialized therapy for spinal cord injury recovery and mobility." },
-      { image: elderlyImg, title: "Balance & Coordination", description: "Targeted exercises to improve balance, prevent falls, and restore coordination." },
-      { image: orthoImg, title: "Post-Surgery Rehab", description: "Guided recovery programs after neurological surgeries." },
+      { image: strockrecovery, title: "Stroke Recovery", description: "Comprehensive rehabilitation programs to regain function after stroke." },
+      { image: spinalcord, title: "Spinal Cord Injuries", description: "Specialized therapy for spinal cord injury recovery and mobility." },
+      { image: balence, title: "Balance & Coordination", description: "Targeted exercises to improve balance, prevent falls, and restore coordination." },
+      { image: postsurgery, title: "Post-Surgery Rehab", description: "Guided recovery programs after neurological surgeries." },
     ],
   },
   {
     title: "Sports Rehabilitation",
     services: [
-      { image: sportsImg, title: "Ligament Injuries", description: "ACL, MCL, and other ligament injury treatment and recovery programs." },
-      { image: heroImg, title: "Muscle Tears", description: "Fast-track recovery for muscle tears with targeted rehabilitation." },
-      { image: orthoImg, title: "Joint Injuries", description: "Expert care for sports-related joint injuries and dislocations." },
-      { image: neuroImg, title: "Performance Training", description: "Physiotherapy-guided performance enhancement and injury prevention." },
+      { image: ligament, title: "Ligament Injuries", description: "ACL, MCL, and other ligament injury treatment and recovery programs." },
+      { image: muscletears, title: "Muscle Tears", description: "Fast-track recovery for muscle tears with targeted rehabilitation." },
+      { image: jointinjuries, title: "Joint Injuries", description: "Expert care for sports-related joint injuries and dislocations." },
+      { image: performance, title: "Performance Training", description: "Physiotherapy-guided performance enhancement and injury prevention." },
     ],
   },
   {
     title: "Elderly & Wellness Care",
     services: [
-      { image: elderlyImg, title: "Arthritis Care", description: "Gentle, effective management of arthritis symptoms and mobility." },
-      { image: neuroImg, title: "Mobility Improvement", description: "Programs designed to maintain and improve independence in daily activities." },
-      { image: heroImg, title: "Balance Training", description: "Fall prevention and balance improvement exercises for seniors." },
-      { image: orthoImg, title: "Chronic Pain Management", description: "Long-term pain relief strategies combining therapy and lifestyle guidance." },
+      { image: arthiritis, title: "Arthritis Care", description: "Gentle, effective management of arthritis symptoms and mobility." },
+      { image: mobility, title: "Mobility Improvement", description: "Programs designed to maintain and improve independence in daily activities." },
+      { image: balencetraining, title: "Balance Training", description: "Fall prevention and balance improvement exercises for seniors." },
+      { image: chronicpain, title: "Chronic Pain Management", description: "Long-term pain relief strategies combining therapy and lifestyle guidance." },
     ],
   },
 ];

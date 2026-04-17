@@ -2,7 +2,7 @@ import { Link, useLocation, NavLink } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { Menu, X, Phone } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import logo from "@/assets/logo.jpg";
+import logo from "@/assets/logo2.png";
 
 const navLinks = [
   { to: "/", label: "Home" },
